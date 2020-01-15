@@ -1,0 +1,56 @@
+create database futrpg;
+use futrpg;
+Database changed
+create table equipes(
+  id int not null auto_increment,
+  nome varchar(15) not null,
+  entrosamento decimal(3,2) not null,
+  primary key(id));
+
+
+create table jogadores(
+  id int not null auto_increment, 
+  nome varchar(30) not null,
+  ataque int not null, 
+  defesa int not null, 
+  passe int not null, 
+  equipe_id int, 
+  primary key(id), 
+  foreign key (equipe_id) references equipes(id));
+
+
+
+
+mysql> insert into equipes values (1, 'barça', 7);
+mysql> insert into equipes values(2, 'liverpool', 9);
+mysql> insert into equipes values(3, 'man city', 8);
+mysql> insert into equipes values(4, 'real madrid', 8);
+mysql> insert into equipes values(5, 'psg', 8);
+mysql> insert into equipes values(6, 'juve', 8);
+
+mysql> insert into jogadores values(1, 'messi',10, 5, 10, 1);
+mysql> insert into jogadores values(2, 'suarez',10, 3, 7, 1);
+mysql> insert into jogadores values(3, 'pique', 5, 9, 7, 1);
+
+
+mysql> insert into jogadores values(4, 'salah', 9, 4, 7, 2);
+mysql> insert into jogadores values(5, 'firmino', 8, 6, 9, 2);
+mysql> insert into jogadores values(6, 'mane', 9, 6, 8, 2);
+
+mysql> insert into jogadores values(7, 'de bruyne', 9, 6, 9, 3);
+mysql> insert into jogadores values(8, 'sterling', 7, 6, 8, 3);
+mysql> insert into jogadores values(9, 'aguero', 9, 4, 7, 3);
+
+mysql> insert into jogadores values(10, 'sergio ramos', 6, 9, 7, 4);
+mysql> insert into jogadores values(11, 'benzema', 9, 6, 8, 4);
+mysql> insert into jogadores values(12, 'modric', 8, 8, 10, 4);
+
+insert into jogadores values(13, 'mbappe', 8, 4, 7, 5);
+insert into jogadores values(14, 'neymar', 10, 4, 9, 5);
+insert into jogadores values(15, 'marquinhos', 6, 9, 8, 5);
+
+
+insert into jogadores values(16, 'chielini', 6, 10, 7, 6);
+insert into jogadores values(17, 'pjanic', 8, 8, 9, 6);
+insert into jogadores values(18, 'cristiano ronaldo', 10, 2, 7, 6);
+
